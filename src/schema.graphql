@@ -1,0 +1,19 @@
+# esse arquivo define a rota da aplicação
+
+# ! define que o campo é obrigatório
+type User {
+  id: ID!
+  name: String!
+  email: String!
+}
+
+type Query {
+  # retornar multiplos usuarios com formato user obrigatorio e não poder ser nulo
+  users: [User!]!
+  # retorna um unico usuario pelo id dele
+  user(id: ID!): User
+}
+
+type Mutation {
+  createUser(name: String!, email: String!): User
+}
